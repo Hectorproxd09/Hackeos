@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The best scams server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Staatliches', cursive;
+            background-image: url('https://i.pinimg.com/originals/5e/5a/0b/5e5a0b7b7e7e7e7e7e7e7e7e7e7e7e7e.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #78e911;
+            overflow: hidden;
+        }
+
+        .terminal-container {
+            background: rgba(120, 233, 17, 0.95);
+            border: 2px solid #78e911;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(120, 233, 17, 0.8);
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .terminal-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #78e911, #00ff00, #78e911);
+            border-radius: 10px 10px 0 0;
+        }
+
+        h1 {
+            font-family: 'Creepster', cursive;
+            font-size: 3.5rem;
+            color: #78e911;
+            text-shadow: 0 0 20px #78e911, 2px 2px 0 #000;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #78e911, 2px 2px 0 #000;
+            }
+            to {
+                text-shadow: 0 0 30px #78e911, 0 0 40px #78e911, 2px 2px 0 #000;
+            }
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 18px 30px;
+            margin: 15px 0;
+            font-family: 'Staatliches', cursive;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #78e911, #90ff00);
+            border: 2px solid #78e911;
+            border-radius: 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #90ff00, #a8ff40);
+            box-shadow: 0 0 25px rgba(120, 233, 17, 0.8);
+            transform: translateY(-3px);
+            color: #000;
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.8), 0 0 30px rgba(120, 233, 17, 0.6);
+        }
+
+        /* Efectos de terminal */
+        .terminal-container {
+            animation: terminalPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes terminalPulse {
+            0%, 100% { 
+                box-shadow: 0 0 30px rgba(120, 233, 17, 0.8);
+            }
+            50% { 
+                box-shadow: 0 0 50px rgba(120, 233, 17, 1), 0 0 70px rgba(120, 233, 17, 0.6);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .button {
+                font-size: 20px;
+                padding: 16px 25px;
+            }
+            
+            .terminal-container {
+                padding: 30px 25px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <h1>The best scams server</h1>
+        
+        <a href="https://www.logged.tg/auth/hackeos" class="button" target="_blank">Site</a>
+        <a href="https://is-gd-su.vercel.app/" class="button" target="_blank">Hyperlink</a>
+        <a href="https://bypasser-pi-ten.vercel.app/" class="button" target="_blank">Bypasser</a>
+        <a href="https://discord.gg/J942CruNSJ" class="button" target="_blank">Discord Server</a>
+    </div>
+</body>
+</html>
