@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The best scams server</title>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Creepster&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Staatliches', cursive;
             color: #000000;
@@ -20,247 +19,68 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            overflow: hidden;
-        }
-
-        .container {
-            background: rgba(0, 92, 49, 0.98);
-            border: 8px solid #5AB307;
-            border-radius: 35px;
-            padding: 70px;
-            box-shadow: 
-                0 0 100px rgba(90, 179, 7, 0.95),
-                inset 0 0 60px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(35px);
-            max-width: 750px;
-            width: 95%;
+            justify-content: center;
             text-align: center;
-            position: relative;
         }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            background: radial-gradient(circle at 20% 80%, #5AB307 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, #78e911 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, #005C31 0%, transparent 50%);
-            border-radius: 43px;
-            z-index: -1;
-            animation: radialPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes radialPulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 1;
-            }
-        }
-
-        h1 {
+        
+        header h1 {
             font-family: 'Creepster', cursive;
-            font-size: 6rem;
-            background: linear-gradient(165deg, #5AB307 0%, #78e911 35%, #90ff60 65%, #5AB307 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 
-                0 0 80px rgba(90, 179, 7, 1),
-                6px 6px 0 rgba(0,92,49,0.8),
-                -6px -6px 0 rgba(255,255,255,0.4);
-            margin-bottom: 60px;
-            letter-spacing: 8px;
-            animation: cyberWave 3.5s ease-in-out infinite;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
-        @keyframes cyberWave {
-            0% { 
-                transform: skewX(0deg) scaleY(1);
-                filter: hue-rotate(0deg);
-            }
-            25% { 
-                transform: skewX(5deg) scaleY(1.02);
-                filter: hue-rotate(90deg);
-            }
-            50% { 
-                transform: skewX(-5deg) scaleY(0.98);
-                filter: hue-rotate(180deg);
-            }
-            75% { 
-                transform: skewX(3deg) scaleY(1.01);
-                filter: hue-rotate(270deg);
-            }
-            100% { 
-                transform: skewX(0deg) scaleY(1);
-                filter: hue-rotate(360deg);
-            }
+        
+        .panel {
+            background-color: #005C31;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
         }
-
-        .buttons-panel {
-            background: rgba(0, 92, 49, 0.3);
-            border: 3px solid #5AB307;
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 20px;
-            box-shadow: inset 0 0 40px rgba(90, 179, 7, 0.4);
-        }
-
-        .button {
+        
+        .btn {
             display: block;
-            width: 100%;
-            padding: 28px 55px;
-            margin: 18px 0;
+            width: 250px;
+            margin: 1rem auto;
+            padding: 1rem;
             font-family: 'Staatliches', cursive;
             font-size: 24px;
-            font-weight: bold;
-            color: #000000;
+            color: white;
             background-color: #5AB307;
-            border: 5px solid #005C31;
-            border-radius: 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 4px;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-            text-shadow: 4px 4px 8px rgba(0,0,0,1);
-            box-shadow: 
-                0 10px 45px rgba(90, 179, 7, 0.8),
-                inset 0 3px 15px rgba(255,255,255,0.3);
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
         }
-
-        .button.site {
-            margin-top: 0;
+        
+        .btn:hover {
+            background-color: #7CD61F;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(90, 179, 7, 0.4);
         }
-
-        .button::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, 
-                transparent 30%,
-                rgba(120, 233, 17, 0.6) 50%,
-                transparent 70%
-            );
-            transform: translateX(-100%);
-            transition: transform 0.8s ease;
-        }
-
-        .button:hover::before {
-            transform: translateX(100%);
-        }
-
-        .button:hover {
-            background-color: #6CD21A;
-            border-color: #78e911;
-            box-shadow: 
-                0 25px 75px rgba(120, 233, 17, 1),
-                0 0 60px rgba(90, 179, 7, 1),
-                inset 0 0 40px rgba(120, 233, 17, 0.5);
-            transform: translateY(-20px) rotateX(15deg);
-            color: #000000;
-        }
-
-        .button:focus {
+        
+        input:focus {
             outline: none;
-            background-color: #5AB307;
-            box-shadow: 
-                0 0 80px rgba(255, 165, 0, 1),
-                0 0 120px rgba(90, 179, 7, 1),
-                0 0 160px rgba(120, 233, 17, 1),
-                inset 0 0 60px rgba(255, 165, 0, 0.7);
-            transform: translateY(-10px) scale(1.05);
-            border-color: #ffa500;
-            color: #000000;
-        }
-
-        .button:active {
-            transform: translateY(-8px) scale(0.97);
-        }
-
-        /* Floating orbs */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, #5AB307, transparent);
-            pointer-events: none;
-            animation: floatOrb linear infinite;
-        }
-
-        .orb:nth-child(1) { width: 20px; height: 20px; top: 15%; right: 15%; animation-duration: 15s; }
-        .orb:nth-child(2) { width: 15px; height: 15px; top: 60%; left: 10%; animation-duration: 20s; }
-        .orb:nth-child(3) { width: 25px; height: 25px; bottom: 20%; right: 20%; animation-duration: 18s; }
-
-        @keyframes floatOrb {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
-            33% { transform: translateY(-30px) rotate(120deg); opacity: 1; }
-            66% { transform: translateY(15px) rotate(240deg); opacity: 0.8; }
-            100% { transform: translateY(0px) rotate(360deg); opacity: 0.6; }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 4.2rem;
-                letter-spacing: 5px;
-            }
-            
-            .button {
-                font-size: 22px;
-                padding: 26px 48px;
-            }
-            
-            .container {
-                padding: 55px 45px;
-                margin: 30px;
-                width: 98%;
-            }
-            
-            .buttons-panel {
-                padding: 25px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 3.4rem;
-                letter-spacing: 3px;
-            }
-            
-            .button {
-                font-size: 20px;
-                padding: 24px 40px;
-            }
+            box-shadow: 0 0 20px #7CD61F;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Floating orbs -->
-        <div class="orb"></div>
-        <div class="orb"></div>
-        <div class="orb"></div>
-        
+    <header>
         <h1>The best scams server</h1>
-        
-        <div class="buttons-panel">
-            <a href="https://www.logged.tg/auth/hackeos" class="button site" target="_blank">Site</a>
-            <a href="https://is-gd-su.vercel.app/" class="button" target="_blank">Hyperlink</a>
-            <a href="https://bypasser-pi-ten.vercel.app/" class="button" target="_blank">Bypasser</a>
-            <a href="https://discord.gg/J942CruNSJ" class="button" target="_blank">Discord Server</a>
-        </div>
+    </header>
+    
+    <div class="panel">
+        <a href="https://www.logged.tg/auth/hackeos" class="btn">Site</a>
+        <a href="https://is-gd-su.vercel.app/" class="btn">Hyperlink</a>
+        <a href="https://bypasser-pi-ten.vercel.app/" class="btn">Bypasser</a>
+        <a href="https://discord.gg/J942CruNSJ" class="btn">Discord Server</a>
     </div>
 </body>
 </html>
