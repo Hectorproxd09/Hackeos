@@ -16,7 +16,7 @@
         body {
             font-family: 'Staatliches', cursive;
             color: #000000;
-            background-image: url('https://i.pinimg.com/736x/42/a9/58/42a95890219d5962abe8e460c1513fe0.jpg');
+            background-image: url('https://i.pinimg.com/1200x/28/1e/a0/281ea01371b9e2265eeb68fd74b3d7f4.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -28,14 +28,16 @@
         }
 
         .container {
-            background: rgba(0, 0, 0, 0.85);
-            border: 3px solid #78e911;
-            border-radius: 15px;
-            padding: 50px;
-            box-shadow: 0 0 40px rgba(120, 233, 17, 0.6);
-            backdrop-filter: blur(15px);
-            max-width: 550px;
-            width: 90%;
+            background: rgba(0, 92, 49, 0.92);
+            border: 4px solid #5AB307;
+            border-radius: 20px;
+            padding: 55px;
+            box-shadow: 
+                0 0 50px rgba(90, 179, 7, 0.8),
+                inset 0 0 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            max-width: 600px;
+            width: 92%;
             text-align: center;
             position: relative;
         }
@@ -43,136 +45,162 @@
         .container::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #78e911, #00ff88, #78e911);
-            border-radius: 15px 15px 0 0;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #5AB307, #78e911, #5AB307);
+            border-radius: 22px;
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+        }
+
+        @keyframes borderGlow {
+            0% { filter: hue-rotate(0deg) brightness(1); }
+            100% { filter: hue-rotate(360deg) brightness(1.2); }
         }
 
         h1 {
             font-family: 'Creepster', cursive;
-            font-size: 4rem;
-            background: linear-gradient(45deg, #78e911, #00ff88, #78e911);
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #5AB307, #78e911, #90ff00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(120, 233, 17, 0.8);
-            margin-bottom: 40px;
-            letter-spacing: 4px;
-            animation: headerGlow 2.5s ease-in-out infinite alternate;
+            text-shadow: 
+                0 0 40px rgba(90, 179, 7, 0.9),
+                3px 3px 0 rgba(0,0,0,0.7);
+            margin-bottom: 45px;
+            letter-spacing: 5px;
+            animation: titlePulse 2s ease-in-out infinite alternate;
         }
 
-        @keyframes headerGlow {
+        @keyframes titlePulse {
             from {
-                filter: drop-shadow(0 0 20px #78e911);
+                transform: scale(1);
+                filter: drop-shadow(0 0 30px #5AB307);
             }
             to {
-                filter: drop-shadow(0 0 40px #78e911) drop-shadow(0 0 60px #00ff88);
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 60px #5AB307) drop-shadow(0 0 80px #78e911);
             }
         }
 
         .button {
             display: block;
             width: 100%;
-            padding: 20px 35px;
-            margin: 18px 0;
+            padding: 22px 40px;
+            margin: 20px 0;
             font-family: 'Staatliches', cursive;
             font-size: 24px;
             font-weight: bold;
-            color: #78e911;
+            color: #5AB307;
             background-color: #005C31;
-            border: 3px solid #78e911;
-            border-radius: 10px;
+            border: 4px solid #5AB307;
+            border-radius: 12px;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             position: relative;
             overflow: hidden;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         .button.site {
-            background-color: #005C31;
             color: #000000;
+            margin-top: 0;
         }
 
         .button::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(120, 233, 17, 0.3), transparent);
-            transition: left 0.6s;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(90, 179, 7, 0.4) 0%, transparent 70%);
+            transition: all 0.6s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .button:hover::before {
-            left: 100%;
+            width: 300px;
+            height: 300px;
         }
 
         .button:hover {
-            background: linear-gradient(45deg, #006633, #00753f, #006633);
-            box-shadow: 0 8px 35px rgba(120, 233, 17, 0.7);
-            transform: translateY(-5px) scale(1.02);
-            border-color: #00ff88;
-            color: #78e911;
+            background: linear-gradient(45deg, #006633, #00753F, #008C4E);
+            box-shadow: 
+                0 12px 45px rgba(90, 179, 7, 0.9),
+                inset 0 0 20px rgba(90, 179, 7, 0.2);
+            transform: translateY(-8px) rotateX(10deg);
+            border-color: #78e911;
+            color: #5AB307;
         }
 
         .button:focus {
             outline: none;
             box-shadow: 
-                0 0 25px rgba(255, 165, 0, 0.9),
-                0 0 40px rgba(120, 233, 17, 0.8),
-                inset 0 0 20px rgba(255, 165, 0, 0.3);
+                0 0 35px rgba(255, 165, 0, 1),
+                0 0 55px rgba(90, 179, 7, 0.9),
+                0 0 75px rgba(120, 233, 17, 0.7),
+                inset 0 0 25px rgba(255, 165, 0, 0.4);
             border-color: #ffa500;
+            transform: translateY(-3px);
         }
 
         .button:active {
-            transform: translateY(-2px) scale(1.01);
+            transform: translateY(-3px) scale(0.98);
         }
 
-        /* Animación de contenedor */
-        .container {
-            animation: containerPulse 4s ease-in-out infinite;
+        /* Efectos adicionales */
+        .container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(90, 179, 7, 0.1) 50%, transparent 70%);
+            border-radius: 20px;
+            animation: shimmer 4s infinite;
+            pointer-events: none;
         }
 
-        @keyframes containerPulse {
-            0%, 100% { 
-                box-shadow: 0 0 40px rgba(120, 233, 17, 0.6);
-                border-color: #78e911;
-            }
-            50% { 
-                box-shadow: 0 0 70px rgba(120, 233, 17, 0.9), 0 0 100px rgba(0, 255, 136, 0.5);
-                border-color: #00ff88;
-            }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
+                letter-spacing: 3px;
             }
             
             .button {
-                font-size: 20px;
-                padding: 18px 28px;
+                font-size: 21px;
+                padding: 20px 32px;
             }
             
             .container {
-                padding: 35px 25px;
-                margin: 20px;
+                padding: 40px 30px;
+                margin: 15px;
+                width: 95%;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 2.2rem;
-                letter-spacing: 2px;
+                font-size: 2.5rem;
+            }
+            
+            .button {
+                font-size: 19px;
             }
         }
     </style>
