@@ -15,81 +15,89 @@
 
         body {
             font-family: 'Staatliches', cursive;
-            background-image: url('https://i.pinimg.com/originals/5e/5a/0b/5e5a0b7b7e7e7e7e7e7e7e7e7e7e7e7e.jpg');
+            color: #000000;
+            background-image: url('https://i.pinimg.com/736x/42/a9/58/42a95890219d5962abe8e460c1513fe0.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-repeat: no-repeat;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #78e911;
             overflow: hidden;
         }
 
-        .terminal-container {
-            background: rgba(120, 233, 17, 0.95);
-            border: 2px solid #78e911;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(120, 233, 17, 0.8);
-            backdrop-filter: blur(10px);
-            max-width: 500px;
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            border: 3px solid #78e911;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 0 40px rgba(120, 233, 17, 0.6);
+            backdrop-filter: blur(15px);
+            max-width: 550px;
             width: 90%;
             text-align: center;
             position: relative;
         }
 
-        .terminal-container::before {
+        .container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #78e911, #00ff00, #78e911);
-            border-radius: 10px 10px 0 0;
+            height: 5px;
+            background: linear-gradient(90deg, #78e911, #00ff88, #78e911);
+            border-radius: 15px 15px 0 0;
         }
 
         h1 {
             font-family: 'Creepster', cursive;
-            font-size: 3.5rem;
-            color: #78e911;
-            text-shadow: 0 0 20px #78e911, 2px 2px 0 #000;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            animation: glow 2s ease-in-out infinite alternate;
+            font-size: 4rem;
+            background: linear-gradient(45deg, #78e911, #00ff88, #78e911);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(120, 233, 17, 0.8);
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            animation: headerGlow 2.5s ease-in-out infinite alternate;
         }
 
-        @keyframes glow {
+        @keyframes headerGlow {
             from {
-                text-shadow: 0 0 20px #78e911, 2px 2px 0 #000;
+                filter: drop-shadow(0 0 20px #78e911);
             }
             to {
-                text-shadow: 0 0 30px #78e911, 0 0 40px #78e911, 2px 2px 0 #000;
+                filter: drop-shadow(0 0 40px #78e911) drop-shadow(0 0 60px #00ff88);
             }
         }
 
         .button {
             display: block;
             width: 100%;
-            padding: 18px 30px;
-            margin: 15px 0;
+            padding: 20px 35px;
+            margin: 18px 0;
             font-family: 'Staatliches', cursive;
             font-size: 24px;
             font-weight: bold;
-            color: #000;
-            background: linear-gradient(45deg, #78e911, #90ff00);
-            border: 2px solid #78e911;
-            border-radius: 8px;
+            color: #78e911;
+            background-color: #005C31;
+            border: 3px solid #78e911;
+            border-radius: 10px;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .button.site {
+            background-color: #005C31;
+            color: #000000;
         }
 
         .button::before {
@@ -99,8 +107,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(120, 233, 17, 0.3), transparent);
+            transition: left 0.6s;
         }
 
         .button:hover::before {
@@ -108,54 +116,72 @@
         }
 
         .button:hover {
-            background: linear-gradient(45deg, #90ff00, #a8ff40);
-            box-shadow: 0 0 25px rgba(120, 233, 17, 0.8);
-            transform: translateY(-3px);
-            color: #000;
+            background: linear-gradient(45deg, #006633, #00753f, #006633);
+            box-shadow: 0 8px 35px rgba(120, 233, 17, 0.7);
+            transform: translateY(-5px) scale(1.02);
+            border-color: #00ff88;
+            color: #78e911;
         }
 
         .button:focus {
             outline: none;
-            box-shadow: 0 0 20px rgba(255, 165, 0, 0.8), 0 0 30px rgba(120, 233, 17, 0.6);
+            box-shadow: 
+                0 0 25px rgba(255, 165, 0, 0.9),
+                0 0 40px rgba(120, 233, 17, 0.8),
+                inset 0 0 20px rgba(255, 165, 0, 0.3);
+            border-color: #ffa500;
         }
 
-        /* Efectos de terminal */
-        .terminal-container {
-            animation: terminalPulse 3s ease-in-out infinite;
+        .button:active {
+            transform: translateY(-2px) scale(1.01);
         }
 
-        @keyframes terminalPulse {
+        /* Animación de contenedor */
+        .container {
+            animation: containerPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes containerPulse {
             0%, 100% { 
-                box-shadow: 0 0 30px rgba(120, 233, 17, 0.8);
+                box-shadow: 0 0 40px rgba(120, 233, 17, 0.6);
+                border-color: #78e911;
             }
             50% { 
-                box-shadow: 0 0 50px rgba(120, 233, 17, 1), 0 0 70px rgba(120, 233, 17, 0.6);
+                box-shadow: 0 0 70px rgba(120, 233, 17, 0.9), 0 0 100px rgba(0, 255, 136, 0.5);
+                border-color: #00ff88;
             }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .button {
                 font-size: 20px;
-                padding: 16px 25px;
+                padding: 18px 28px;
             }
             
-            .terminal-container {
-                padding: 30px 25px;
+            .container {
+                padding: 35px 25px;
                 margin: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+                letter-spacing: 2px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="terminal-container">
+    <div class="container">
         <h1>The best scams server</h1>
         
-        <a href="https://www.logged.tg/auth/hackeos" class="button" target="_blank">Site</a>
+        <a href="https://www.logged.tg/auth/hackeos" class="button site" target="_blank">Site</a>
         <a href="https://is-gd-su.vercel.app/" class="button" target="_blank">Hyperlink</a>
         <a href="https://bypasser-pi-ten.vercel.app/" class="button" target="_blank">Bypasser</a>
         <a href="https://discord.gg/J942CruNSJ" class="button" target="_blank">Discord Server</a>
